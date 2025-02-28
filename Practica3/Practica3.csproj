@@ -48,6 +48,7 @@
     <Compile Include="btnExtendido.Designer.cs">
       <DependentUpon>btnExtendido.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="txtBoxExtendido.cs">
       <SubType>UserControl</SubType>
