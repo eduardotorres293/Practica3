@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Practica3
 {
-    internal class RFCValidator
+    public class RFCValidator
     {
         public bool validarRFC(string texto)
         {

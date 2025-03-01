@@ -35,7 +35,11 @@ namespace Practica3
             get { return modoElegido; }
             set { modoElegido = value; }
         }
-
+        public string Texto
+        {
+            get { return textBox1.Text; }
+            set { textBox1.Text = value; }
+        }
         public void TxtInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             bool esInvalido = false;

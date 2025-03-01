@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Practica3
 {
-    internal class InputValidator
+    public class InputValidator
     {
         // CASO 1: Verificacion mediante Regex
         public bool EsSoloNumeros(string texto)
