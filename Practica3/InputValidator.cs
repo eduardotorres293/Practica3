@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq; // Esta libreria se utiliza en el caso 2 para verificar 
+using System.Linq; // Esta libreria se utiliza en el caso 3 para verificar 
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -9,28 +10,39 @@ namespace Practica3
 {
     internal class InputValidator
     {
-        // CASO 1: Verifacion mediante KeyChar
-        public bool EsSoloNumeros(KeyPressEventArgs e)
+        // CASO 1: Verificacion mediante Regex
+        public bool EsSoloNumeros(string texto)
         {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
-            {
-                e.Handled = true;
-                return false;
-            }
-            return true;
+            return !string.IsNullOrWhiteSpace(texto) && Regex.IsMatch(texto, @"^\d+$");
         }
 
-        public bool EsSoloLetras(KeyPressEventArgs e)
+        public bool EsSoloLetras(string texto)
         {
-            if ((e.KeyChar < 65 || e.KeyChar > 90) && (e.KeyChar < 97 || e.KeyChar > 122))
-            {
-                e.Handled = true;
-                return false;
-            }
-            return true;
+            return !string.IsNullOrWhiteSpace(texto) && Regex.IsMatch(texto, @"^[A-Za-z]+$");
         }
 
-        // CASO 2: Verificacion mediante metodos con LINQ
+        // CASO 2: Verifacion mediante KeyChar
+        //public bool EsSoloNumeros(KeyPressEventArgs e, string texto)
+        //{
+        //    if (e.KeyChar < 48 || e.KeyChar > 57)
+        //    {
+        //        e.Handled = true;
+        //       return false;
+        //    }
+        //    return true;
+        //}
+        //
+        //public bool EsSoloLetras(KeyPressEventArgs e, string texto)
+        //{
+        //    if ((e.KeyChar < 65 || e.KeyChar > 90) && (e.KeyChar < 97 || e.KeyChar > 122))
+        //    {
+        //        e.Handled = true;
+        //        return false;
+        //    }
+        //    return true;
+        //}
+
+        // CASO 3: Verificacion mediante metodos con LINQ
 
         //public bool EsSoloNumeros(string texto)
         //{
@@ -53,7 +65,7 @@ namespace Practica3
         //
         //
         //
-        // CASO 3: Verificación mediante ASCII sin interfaces gráficas
+        // CASO 4: Verificación mediante ASCII sin interfaces gráficas
         // public bool EsSoloNumeros(string texto)
         //{
         //    if (string.IsNullOrWhiteSpace(texto))

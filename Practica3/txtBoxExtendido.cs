@@ -23,7 +23,7 @@ namespace Practica3
             NumbersOnly, WordsOnly, Both
         }
 
-        private valor modoElegido = valor.Both;
+        public valor modoElegido = valor.Both;
 
         [Category("Behavior")]
         [Description("Define si solo se aceptan números, letras o ambos")]
@@ -36,7 +36,7 @@ namespace Practica3
             set { modoElegido = value; }
         }
 
-        private void TxtInput_KeyPress(object sender, KeyPressEventArgs e)
+        public void TxtInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             bool esInvalido = false;
             switch (modoElegido)

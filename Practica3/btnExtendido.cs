@@ -19,17 +19,17 @@ namespace Practica3
             button1.MouseLeave += Button1_MouseLeave;
             button1.MouseDown += Button1_MouseDown;
         }
-        private void Button1_MouseEnter(object sender, EventArgs e)
+        public void Button1_MouseEnter(object sender, EventArgs e)
         {
             button1.BackColor = Color.LightGray;
         }
 
-        private void Button1_MouseLeave(object sender, EventArgs e)
+        public void Button1_MouseLeave(object sender, EventArgs e)
         {
             button1.BackColor = default(Color);
         }
 
-        private void Button1_MouseDown(object sender, MouseEventArgs e)
+        public void Button1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && e.Clicks == 2)
             {
